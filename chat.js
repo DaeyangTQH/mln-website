@@ -1,5 +1,5 @@
 (function () {
-  const API_BASE = "http://localhost:8000";
+  const API_BASE = (import.meta.env.VITE_API_BASE_URL || "http://localhost:8000").replace(/\/$/, "");
   const MAX_HISTORY = 12;
   const MIN_SELECTION = 12; // ký tự tối thiểu để hiện nút hỏi-tại-chỗ
 
