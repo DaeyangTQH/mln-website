@@ -1,6 +1,9 @@
 import { Hotspot } from "../components/Hotspot.jsx";
 import parliamentImage from "../../assets/nhanuoc.jpg";
 import industryImage from "../../assets/kcn-ver.jpg";
+import nationalAssemblyImage from "../../assets/quochoi (2).jpg";
+import portImage from "../../assets/cảng.jpg";
+import industrialAreaImage from "../../assets/industrial-area.jpg";
 
 export default function Chapter2State() {
   return (
@@ -11,11 +14,11 @@ export default function Chapter2State() {
         <section className="public-net pub-editorial" id="s-bridge">
           <div className="pub-ed">
             <div className="pub-left">
-              <figure className="pub-img pub-tall reveal"><img src="\assets\quochoi (2).jpg" alt="Tòa nhà Quốc hội, biểu tượng cho quyền lực và chính sách của Nhà nước" /></figure>
-              <figure className="pub-img pub-wide reveal"><img src="\assets\cảng.jpg" alt="Cảng hàng hóa quy mô lớn, gợi lên vai trò của hạ tầng then chốt trong nền kinh tế" /></figure>
+              <figure className="pub-img pub-tall reveal"><img src={nationalAssemblyImage} alt="Tòa nhà Quốc hội, biểu tượng cho quyền lực và chính sách của Nhà nước" /></figure>
+              <figure className="pub-img pub-wide reveal"><img src={portImage} alt="Cảng hàng hóa quy mô lớn, gợi lên vai trò của hạ tầng then chốt trong nền kinh tế" /></figure>
             </div>
             <div className="pub-right">
-              <figure className="pub-img pub-pop reveal"><img src="\assets\industrial-area.jpg" alt="Khu công nghiệp rộng lớn, biểu hiện sự tập trung sản xuất và tư bản" /></figure>
+              <figure className="pub-img pub-pop reveal"><img src={industrialAreaImage} alt="Khu công nghiệp rộng lớn, biểu hiện sự tập trung sản xuất và tư bản" /></figure>
               <h2 className="pub-title reveal">Vì sao độc quyền tư nhân lại cần đến<br /> <span>quyền lực Nhà nước?</span></h2>
               <div className="pub-body reveal">
                 <p>Một doanh nghiệp lớn có thể chi phối một thị trường. Nhưng khi nhiều tổ chức độc quyền cùng vươn tới ngân hàng, công nghiệp, hạ tầng và chính sách, câu chuyện không còn chỉ nằm trong phạm vi mua bán thông thường.</p>
