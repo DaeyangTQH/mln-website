@@ -1,3 +1,5 @@
+import electricPylonImage from "../../assets/electric-pylon.jpg";
+
 const reasons = [
   {
     title: "Độc quyền tự nhiên",
@@ -7,7 +9,7 @@ const reasons = [
       "Không thể mỗi công ty điện xây một hệ thống đường dây truyền tải riêng.",
       "Không thể mỗi công ty nước xây một mạng lưới ống nước riêng.",
     ],
-    image: "assets/electric-pylon.jpg",
+    image: electricPylonImage,
     alt: "Hệ thống đường dây truyền tải điện cao áp",
   },
   {
@@ -15,7 +17,7 @@ const reasons = [
     lead: "Điện và nước duy trì hoạt động của toàn xã hội.",
     body: "Khả năng tiếp cận hai dịch vụ này ảnh hưởng trực tiếp đến nhiều lĩnh vực quan trọng.",
     facts: ["Đời sống người dân", "Hoạt động của doanh nghiệp", "Quốc phòng và an ninh", "Phát triển kinh tế – xã hội"],
-    image: "assets/reg5-city.jpg",
+    image: "/assets/reg5-city.jpg",
     alt: "Đô thị phụ thuộc vào nguồn cung điện và nước ổn định",
   },
   {
@@ -23,7 +25,7 @@ const reasons = [
     lead: "Tư nhân hóa hoàn toàn không đồng nghĩa với cạnh tranh.",
     body: "Khi hạ tầng vẫn chỉ có một mạng lưới, quyền lực độc quyền có thể chuyển từ Nhà nước sang doanh nghiệp tư nhân.",
     facts: ["Giá dịch vụ có nguy cơ tăng cao", "Khó phục vụ vùng sâu, vùng xa", "Lợi ích công cộng có thể bị ảnh hưởng"],
-    image: "assets/reg1-price.jpg",
+    image: "/assets/reg1-price.jpg",
     alt: "Hạ tầng cấp nước phục vụ khu dân cư",
   },
 ];
