@@ -5613,7 +5613,7 @@ body.mindmap-open { overflow: hidden }
       rgba(20, 56, 100, .32) 66%,
       rgba(20, 56, 100, 0) 74%),
     /* nền cột điện hoàng hôn: XANH (trên) → CAM (dưới), cột bên phải */
-    url(/assets/hoang-hon.jpg) right center/cover no-repeat
+    url("./assets/hoang-hon.jpg") right center/cover no-repeat
 }
 
 .pub-editorial {
@@ -5748,7 +5748,7 @@ body.mindmap-open { overflow: hidden }
 .electric-bg {
   inset: 0;
   background:
-    url(/assets/electric-pylon.jpg) center top/100% auto no-repeat !important
+    url("./assets/electric-pylon.jpg") center top/100% auto no-repeat !important
 }
 
 .electric-bg::after {
@@ -6276,7 +6276,7 @@ body.mindmap-open { overflow: hidden }
   height: 100vh;
   margin-bottom: -100vh;
   pointer-events: none;
-  background-image: url("/assets/electric-pylon.jpg");
+  background-image: url("./assets/electric-pylon.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center 0;

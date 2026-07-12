@@ -54,10 +54,10 @@ export default function Chapter2State() {
             {/* lớp ảnh minh hoạ: mỗi bước 1 ảnh phủ trọn khung, đổi khi cuộn */}
             <div className="reg-camera">
               <div className="river-photos" aria-hidden="true">
-                <div className="river-photo" data-step="1" style={{ backgroundImage: "url(assets/reg5-city.jpg)" }} />
-                <div className="river-photo" data-step="2" style={{ backgroundImage: "url(assets/reg1-price.jpg)" }} />
-                <div className="river-photo" data-step="3" style={{ backgroundImage: "url(assets/reg4-rural.jpg)" }} />
-                <div className="river-photo" data-step="4" style={{ backgroundImage: "url(assets/reg3-grid.jpg)" }} />
+                <div className="river-photo" data-step="1" style={{ backgroundImage: "url('/assets/reg5-city.jpg')" }} />
+                <div className="river-photo" data-step="2" style={{ backgroundImage: "url('/assets/reg1-price.jpg')" }} />
+                <div className="river-photo" data-step="3" style={{ backgroundImage: "url('/assets/reg4-rural.jpg')" }} />
+                <div className="river-photo" data-step="4" style={{ backgroundImage: "url('/assets/reg3-grid.jpg')" }} />
               </div>
               <div className="river-fog" aria-hidden="true" />
               <svg className="regulator-svg river-svg" viewBox="0 0 900 620" aria-hidden="true">

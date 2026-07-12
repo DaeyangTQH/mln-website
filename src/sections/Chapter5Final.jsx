@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Hotspot } from "../components/Hotspot.jsx";
 
+import mindmapImage from "../../assets/mindmap.png";
+
 export default function Chapter5Final() {
   const [mindmapOpen, setMindmapOpen] = useState(false);
 
@@ -27,7 +29,7 @@ export default function Chapter5Final() {
         </header>
 
         <button className="mindmap-summary__figure" type="button" onClick={() => setMindmapOpen(true)} aria-label="Mở sơ đồ tư duy toàn màn hình">
-          <img src="assets/mindmap.png" alt="Sơ đồ tư duy tổng hợp chuyên đề độc quyền, độc quyền nhà nước và tư nhân hóa điện nước tại Việt Nam" />
+          <img src={mindmapImage} alt="Sơ đồ tư duy tổng hợp chuyên đề độc quyền, độc quyền nhà nước và tư nhân hóa điện nước tại Việt Nam" />
           <span>Xem toàn màn hình</span>
         </button>
         <p className="mindmap-summary__hint">Nhấn vào sơ đồ để xem chi tiết.</p>
@@ -37,7 +39,7 @@ export default function Chapter5Final() {
         <div className="mindmap-lightbox" role="dialog" aria-modal="true" aria-label="Sơ đồ tư duy tổng kết" onClick={() => setMindmapOpen(false)}>
           <button type="button" className="mindmap-lightbox__close" onClick={() => setMindmapOpen(false)} aria-label="Đóng sơ đồ">×</button>
           <div className="mindmap-lightbox__viewport" onClick={(event) => event.stopPropagation()}>
-            <img src="assets/mindmap.png" alt="Sơ đồ tư duy tổng hợp chuyên đề" />
+            <img src={mindmapImage} alt="Sơ đồ tư duy tổng hợp chuyên đề" />
           </div>
         </div>
       )}

@@ -33,8 +33,8 @@ export default function Chapter4Debate() {
     <>
       <section className="privatization-cover" id="s-debate">
         <div className="privatization-cover__media" aria-hidden="true">
-          <figure><img src="assets/reg5-city.jpg" alt="" /></figure>
-          <figure><img src="assets/reg2-quality.jpg" alt="" /></figure>
+          <figure><img src="/assets/reg5-city.jpg" alt="" /></figure>
+          <figure><img src="/assets/reg2-quality.jpg" alt="" /></figure>
         </div>
         <div className="privatization-cover__shade" aria-hidden="true"></div>
         <div className="privatization-cover__copy">
