@@ -127,6 +127,10 @@
   color: #F3C12C;
 }
 
+.chapter-nav-mobile {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .chapter-nav {
     margin-top: -190px;

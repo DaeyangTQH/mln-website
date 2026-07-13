@@ -1127,3 +1127,89 @@
     margin: 0 0 12px
   }
 }
+
+@media(max-width:560px) {
+  .article {
+    padding-inline: 16px;
+    padding-bottom: 76px
+  }
+
+  .article-layout { gap: 24px }
+
+  .monopoly-grid { gap: 8px }
+
+  .monopoly-cluster {
+    padding: 20px 4px 22px;
+    border-bottom: 1px solid rgba(16, 42, 51, .14)
+  }
+
+  .monopoly-cluster h3 {
+    font-size: 24px;
+    margin-bottom: 14px
+  }
+
+  .monopoly-cluster ul {
+    padding-left: 20px;
+    font-size: 15px;
+    line-height: 1.55
+  }
+
+  .article-side { min-height: 240px }
+
+  .yellow-circle {
+    width: 205px;
+    height: 205px
+  }
+
+  .stages.causes-sec {
+    padding: 76px 16px 82px
+  }
+
+  .causes-inner { padding-inline: 0 }
+
+  .cause-timeline { gap: 38px }
+
+  .cause-step,
+  .cause-step.climax {
+    grid-template-columns: 1fr;
+    gap: 12px
+  }
+
+  .cause-fig,
+  .cause-step.climax .cause-fig {
+    justify-content: flex-start;
+    min-height: 82px;
+    padding-left: 18px
+  }
+
+  .cause-illust,
+  .cause-step.climax .cause-illust {
+    width: 100px;
+    max-height: 92px;
+    object-position: left bottom
+  }
+
+  .cause-card,
+  .cause-step.climax .cause-card {
+    border: 0;
+    border-top: 1px solid rgba(16, 42, 51, .16);
+    padding: 22px 4px 0
+  }
+
+  .cause-step.climax .cause-card {
+    padding: 24px 18px;
+    border-top-color: rgba(184, 137, 31, .35)
+  }
+
+  .cause-card h3 { font-size: clamp(25px, 8vw, 31px) }
+
+  .cause-card p {
+    font-size: 15px;
+    line-height: 1.58
+  }
+
+  .cause-step.climax .cause-card::before {
+    top: 12px;
+    right: 12px
+  }
+}

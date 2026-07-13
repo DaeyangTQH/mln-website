@@ -71,7 +71,7 @@ export function useScrollytelling() {
       });
 
       gsap.to(".hero-title", {
-        y: -260,
+        y: innerWidth < 700 ? -72 : -260,
         opacity: 0.88,
         ease: "none",
         scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
@@ -80,8 +80,8 @@ export function useScrollytelling() {
       const heroIntroVisual = $(".hero-intro-visual");
       if (heroIntroVisual) {
         gsap.to(heroIntroVisual, {
-          y: -120,
-          scale: 1.04,
+          y: innerWidth < 700 ? -36 : -120,
+          scale: innerWidth < 700 ? 1.015 : 1.04,
           ease: "none",
           scrollTrigger: {
             trigger: "#s-hero",
@@ -369,6 +369,7 @@ export function useScrollytelling() {
     const nav = $("#chapterNav");
     const progress = $("#progressBar");
     const links = nav ? $$("a", nav) : [];
+    const mobileChapterSelect = nav ? $(".chapter-nav-mobile select", nav) : null;
     const secs = links.map((a) => $(a.getAttribute("href")));
     function onScroll() {
       const doc = document.documentElement;
@@ -400,6 +401,9 @@ export function useScrollytelling() {
           if (s && s.getBoundingClientRect().top <= activeLine) idx = i;
         });
         links.forEach((l, i) => l.classList.toggle("active", i === idx));
+        if (mobileChapterSelect && links[idx]) {
+          mobileChapterSelect.value = links[idx].getAttribute("href");
+        }
       }
     }
     addEventListener("scroll", onScroll, { passive: true });
@@ -504,7 +508,8 @@ export function useScrollytelling() {
         node.addEventListener("click", () => setStep(step));
       });
       setStep(0);
-      if (hasST && !reduce) {
+      const shouldPinRegulator = innerWidth >= 960 && innerHeight >= 680;
+      if (hasST && !reduce && shouldPinRegulator) {
         ScrollTrigger.create({
           trigger: section,
           start: "top top",
@@ -515,6 +520,10 @@ export function useScrollytelling() {
           onLeaveBack: () => setStep(0),
           onLeave: () => setStep(states.length - 1),
         });
+      } else if (innerWidth < 960) {
+        // Mobile/tablet: không pin section; giữ luồng cuộn tự nhiên và cho phép
+        // người dùng chạm từng hotspot để xem nội dung tương ứng.
+        section.classList.add("regulator-static");
       }
     })();
 

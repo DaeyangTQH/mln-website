@@ -3113,14 +3113,45 @@ blockquote {
   cursor: not-allowed
 }
 
-.rag-send.sending svg {
-  animation: ragSpin .8s linear infinite
+.rag-send-loader {
+  --loader-yellow: #f5c542;
+  --c: no-repeat radial-gradient(farthest-side, var(--loader-yellow) 92%, #0000);
+  display: none;
+  position: relative;
+  width: 28px;
+  aspect-ratio: 1;
+  background:
+    var(--c) 50% 0,
+    var(--c) 50% 100%,
+    var(--c) 100% 50%,
+    var(--c) 0 50%;
+  background-size: 6px 6px
 }
 
-@keyframes ragSpin {
-  to {
-    transform: rotate(360deg)
-  }
+.rag-send-loader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: 2px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(#0000 0 35deg, var(--loader-yellow) 0 90deg);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 2px), #000 0);
+  mask: radial-gradient(farthest-side, #0000 calc(100% - 2px), #000 0)
+}
+
+.rag-chat .rag-send.sending svg { display: none }
+
+.rag-send.sending .rag-send-loader {
+  display: block;
+  animation: ragLoaderSpin 1s linear infinite
+}
+
+@keyframes ragLoaderSpin {
+  100% { transform: rotate(.5turn) }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rag-send.sending .rag-send-loader { animation: none }
 }
 
 /* ---------- Chip chọn chế độ (Codex-style) ---------- */
@@ -3314,17 +3345,31 @@ blockquote {
   position: absolute;
   z-index: 200;
   transform: translateX(-50%);
-  padding: 7px 14px;
-  border: 0;
+  padding: 9px 16px;
+  border: 1px solid rgba(255, 255, 255, .28);
   border-radius: 20px;
-  background: var(--accent);
+  background: #d99a00;
   color: #fff;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 1px 1px rgba(79, 50, 0, .3);
   cursor: pointer;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, .28);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .34), 0 0 0 3px rgba(245, 197, 66, .16);
   white-space: nowrap;
-  animation: ragAskPop .14s ease
+  animation: ragAskPop .14s ease;
+  transition: background .16s ease, transform .16s ease, box-shadow .16s ease
+}
+
+.rag-ask-selection:hover {
+  background: #efad00;
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 13px 32px rgba(0, 0, 0, .38), 0 0 0 4px rgba(245, 197, 66, .2)
+}
+
+.rag-ask-selection:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, .9);
+  outline-offset: 3px
 }
 
 .rag-ask-selection::after {
@@ -3335,8 +3380,10 @@ blockquote {
   transform: translateX(-50%);
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-top: 6px solid var(--accent)
+  border-top: 6px solid #d99a00
 }
+
+.rag-ask-selection:hover::after { border-top-color: #efad00 }
 
 @keyframes ragAskPop {
   from {
@@ -4418,7 +4465,21 @@ body.mindmap-open { overflow: hidden }
 .rag-chat .rag-composer textarea {
   min-height: 42px;
   padding: 9px 10px 3px;
-  font-size: 13.5px
+  font-size: 13.5px;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none
+}
+
+.rag-chat .rag-composer textarea:focus,
+.rag-chat .rag-composer textarea:focus-visible {
+  outline: 0;
+  border: 0;
+  box-shadow: none
 }
 
 .rag-chat .rag-composer-bar { padding: 4px 4px 2px 6px }
@@ -5568,6 +5629,414 @@ body.mindmap-open { overflow: hidden }
 @media(max-width:900px) {
   .regulator-visual {
     transform: none
+  }
+}
+
+/* Final mobile authority: keep this block last because this stylesheet
+   contains legacy responsive layers for earlier page variants. */
+@media(max-width:600px) {
+  .hero { height: 100svh; min-height: 620px; max-height: 860px }
+  .hero-intro-visual { top: 0; height: 190svh; background-position: 57% center }
+  .hero-title { left: 18px; right: 18px; top: 22%; width: auto }
+  .hero-title .row { flex-wrap: wrap }
+  .hero-title b { font-size: clamp(48px, 15.5vw, 68px); line-height: .9 }
+  .hero-title i { font-size: clamp(20px, 6vw, 28px); line-height: 1.05 }
+  .badges { top: 24px; left: 18px; right: 18px; flex-wrap: wrap }
+
+  .intro { min-height: auto; padding: 88px 20px 112px; overflow: visible }
+  .intro-grid { width: 100%; transform: none; gap: 44px }
+  .intro-main { align-items: flex-start }
+  .intro-lead, .intro-body { max-width: none; margin: 0; text-align: left }
+  .intro-lead { font-size: clamp(25px, 7.2vw, 34px); line-height: 1.32 }
+
+  .chapter-nav { top: 0; margin: 0; padding: 13px 18px; background: rgba(3, 28, 36, .92) !important }
+  .chapter-nav::before { display: none }
+  .chapter-nav a, .chapter-nav.on-light a { flex: none; font-size: 12px }
+
+  .cover { min-height: auto; padding: 28px 16px 88px }
+  .cover-frame, .article-layout { width: 100% }
+  .cover-frame { height: clamp(360px, 76svh, 520px) }
+  .cover-frame figcaption { left: 20px; right: 20px; bottom: 24px }
+  .cover-frame h2 { font-size: clamp(32px, 9.5vw, 43px); line-height: 1.02 }
+
+  .pub-editorial { min-height: auto; padding-bottom: 90px; overflow: hidden }
+  .pub-ed { width: calc(100% - 32px); padding-top: 76px }
+  .pub-title { font-size: clamp(38px, 11vw, 54px); line-height: 1.02 }
+  .pub-title br { display: none }
+
+  .essence-editorial { width: 100%; padding-inline: 18px; grid-template-columns: 1fr }
+  .essence-diptych, .essence-facts { grid-template-columns: 1fr }
+  .essence-photo { min-height: 300px }
+
+  .vn-frame { min-height: auto; padding: 90px 18px 104px; overflow: hidden }
+  .vn-frame-inner { gap: 44px }
+  .vn-frame-copy h2 { max-width: none; font-size: clamp(40px, 11vw, 55px) }
+  .vn-principles { width: calc(100vw - 36px); grid-template-columns: repeat(3, minmax(78vw, 1fr)); gap: 14px }
+  .vn-principle, .vn-principle:nth-child(1), .vn-principle:nth-child(2), .vn-principle:nth-child(3) { height: min(68svh, 500px) }
+
+  .privatization-cover { min-height: max(620px, 100svh) }
+  .privatization-cover__copy { width: calc(100% - 36px); padding: 100px 0 84px }
+  .editorial-reasons { padding: 88px 18px }
+  .vn-policy { padding-inline: 18px }
+
+  .final.final { min-height: auto; margin-top: 0; padding: 1px 0 100px }
+  .mindmap-summary { width: calc(100% - 28px); margin-top: 82px }
+}
+
+@media(max-width:380px) {
+  .hero { min-height: 560px }
+  .hero-title { top: 24% }
+  .hero-title b { font-size: clamp(43px, 14.5vw, 55px) }
+  .hero-title i { font-size: 19px }
+}
+
+/* ================================================================
+   Small-screen safety pass — natural document flow, no desktop crop
+   ================================================================ */
+@media(max-width:600px) {
+  :root { --nav-h: 0px }
+
+  html { scroll-padding-top: 62px }
+
+  .landing { overflow-x: clip }
+
+  .hero-intro-visual {
+    top: 0;
+    height: 190svh;
+    background-position: 57% center;
+    background-size: auto 100%
+  }
+
+  .hero {
+    height: 100svh;
+    min-height: 620px;
+    max-height: 860px
+  }
+
+  .badges {
+    top: 24px;
+    left: 18px;
+    right: 18px;
+    gap: 7px
+  }
+
+  .badge {
+    padding: 7px 10px;
+    font-size: 10px
+  }
+
+  .hero-title {
+    left: 18px;
+    right: 18px;
+    top: 22%;
+    width: auto
+  }
+
+  .hero-title .row {
+    gap: .12em;
+    flex-wrap: wrap
+  }
+
+  .hero-title b {
+    font-size: clamp(48px, 15.5vw, 68px);
+    line-height: .9
+  }
+
+  .hero-title i {
+    font-size: clamp(20px, 6vw, 28px);
+    line-height: 1.05
+  }
+
+  .hero-title .row:last-child {
+    margin-top: 9px
+  }
+
+  .intro {
+    min-height: auto;
+    padding: 88px 20px 112px;
+    overflow: visible;
+    align-items: flex-start
+  }
+
+  .intro-grid {
+    width: 100%;
+    gap: 44px;
+    transform: none
+  }
+
+  .intro-main { align-items: flex-start }
+
+  .intro-lead,
+  .intro-body {
+    max-width: none;
+    margin: 0;
+    text-align: left
+  }
+
+  .intro-lead {
+    font-size: clamp(25px, 7.2vw, 34px);
+    line-height: 1.32
+  }
+
+  .intro-body {
+    font-size: 15px;
+    line-height: 1.68
+  }
+
+  .intro-meta {
+    gap: 20px;
+    padding-top: 0
+  }
+
+  .chapter-nav {
+    top: 0;
+    min-height: 52px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 13px 18px;
+    gap: 22px;
+    background: rgba(3, 28, 36, .92) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px)
+  }
+
+  .chapter-nav::before { display: none }
+
+  .chapter-nav a,
+  .chapter-nav.on-light a {
+    flex: none;
+    font-size: 12px
+  }
+
+  .cover {
+    min-height: auto;
+    padding: 28px 16px 88px
+  }
+
+  .cover-frame,
+  .article-layout {
+    width: 100%
+  }
+
+  .cover-frame { height: clamp(360px, 76svh, 520px) }
+
+  .cover-frame figcaption {
+    left: 20px;
+    right: 20px;
+    bottom: 24px
+  }
+
+  .cover-frame .kicker { font-size: 13px }
+
+  .cover-frame h2 {
+    font-size: clamp(32px, 9.5vw, 43px);
+    line-height: 1.02
+  }
+
+  .pub-editorial {
+    min-height: auto;
+    padding-bottom: 90px;
+    overflow: hidden
+  }
+
+  .pub-ed {
+    width: calc(100% - 32px);
+    padding-top: 76px
+  }
+
+  .pub-title {
+    font-size: clamp(38px, 11vw, 54px);
+    line-height: 1.02
+  }
+
+  .pub-title br { display: none }
+
+  .pub-body {
+    max-width: none;
+    font-size: 15px
+  }
+
+  .essence-editorial {
+    width: 100%;
+    padding-inline: 18px;
+    grid-template-columns: 1fr
+  }
+
+  .essence-manifesto h2 {
+    font-size: clamp(40px, 11vw, 56px);
+    line-height: 1.02
+  }
+
+  .essence-diptych {
+    grid-template-columns: 1fr;
+    max-height: none
+  }
+
+  .essence-photo { min-height: 300px }
+
+  .essence-facts { grid-template-columns: 1fr }
+
+  .vn-frame {
+    min-height: auto;
+    padding: 90px 18px 104px;
+    overflow: hidden
+  }
+
+  .vn-frame-inner { gap: 44px }
+
+  .vn-frame-copy h2 {
+    max-width: none;
+    font-size: clamp(40px, 11vw, 55px)
+  }
+
+  .vn-principles {
+    width: calc(100vw - 36px);
+    grid-template-columns: repeat(3, minmax(78vw, 1fr));
+    gap: 14px;
+    padding-bottom: 14px;
+    overscroll-behavior-inline: contain
+  }
+
+  .vn-principle,
+  .vn-principle:nth-child(1),
+  .vn-principle:nth-child(2),
+  .vn-principle:nth-child(3) {
+    height: min(68svh, 500px)
+  }
+
+  .privatization-cover {
+    min-height: max(620px, 100svh)
+  }
+
+  .privatization-cover__copy {
+    width: calc(100% - 36px);
+    padding: 100px 0 84px
+  }
+
+  .editorial-reasons { padding: 88px 18px }
+
+  .editorial-reasons__head { margin-bottom: 64px }
+
+  .editorial-reasons__head h2 {
+    font-size: clamp(40px, 12vw, 56px)
+  }
+
+  .vn-policy { padding-inline: 18px }
+
+  .mindmap-summary {
+    width: calc(100% - 28px);
+    margin-top: 82px
+  }
+
+  .mindmap-summary__head h2 {
+    font-size: clamp(40px, 11vw, 54px)
+  }
+
+  .final.final {
+    min-height: auto;
+    margin-top: 0;
+    padding: 1px 0 100px
+  }
+
+  .to-top { right: 18px; bottom: 18px }
+}
+
+@media(max-width:380px) {
+  .hero { min-height: 560px }
+
+  .hero-title { top: 24% }
+
+  .hero-title b { font-size: clamp(43px, 14.5vw, 55px) }
+
+  .hero-title i { font-size: 19px }
+
+  .intro,
+  .vn-frame,
+  .editorial-reasons { padding-inline: 15px }
+
+  .cover { padding-inline: 12px }
+
+  .cover-frame figcaption {
+    left: 16px;
+    right: 16px
+  }
+}
+
+@media(max-width:600px) {
+  .migration-intro {
+    min-height: auto;
+    padding: 84px 18px 96px;
+    display: block
+  }
+
+  .mi-content { width: 100% }
+
+  .mi-content h2 {
+    max-width: none;
+    font-size: clamp(42px, 13vw, 62px);
+    line-height: 1
+  }
+
+  .mi-concept-list { margin-top: 42px }
+
+  .mi-concept-list li,
+  .mi-concept-list li + li {
+    padding: 18px 0;
+    font-size: 20px;
+    line-height: 1.28
+  }
+
+  .mi-concept-note {
+    width: 100%;
+    margin: 42px 0 0;
+    padding: 20px 0 0 18px;
+    border-left: 3px solid var(--gold);
+    text-align: left
+  }
+
+  .mi-concept-note__lead br { display: none }
+
+  .mapsec.regulator-sec {
+    min-height: auto;
+    padding: 76px 0 90px;
+    overflow: hidden
+  }
+
+  .regulator-stage,
+  .regulator-static .regulator-stage {
+    width: calc(100% - 28px);
+    gap: 24px;
+    transform: none
+  }
+
+  .regulator-visual { min-height: 0 }
+
+  .reg-camera {
+    width: 100%;
+    border-radius: 20px
+  }
+
+  .regulator-hotspot {
+    width: 34px;
+    height: 34px
+  }
+
+  .regulator-panel {
+    padding: 24px 18px 26px;
+    border-left-width: 3px;
+    border-radius: 0 18px 18px 0
+  }
+
+  .regulator-panel h2 {
+    margin-bottom: 16px;
+    font-size: clamp(29px, 9vw, 40px);
+    line-height: 1.04
+  }
+
+  .regulator-panel p {
+    max-width: none;
+    font-size: 15px;
+    line-height: 1.62
   }
 }
 

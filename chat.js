@@ -71,7 +71,10 @@
                   ${MODES.map((m, i) => `<button type="button" class="rag-mode-item${i === 0 ? " active" : ""}" role="menuitemradio" aria-checked="${i === 0}" data-mode="${m.id}"><span class="rag-mode-item-ico">${m.icon}</span><span class="rag-mode-item-text"><strong>${m.label}</strong><small>${m.hint}</small></span><span class="rag-mode-check" aria-hidden="true">✓</span></button>`).join("")}
                 </div>
               </div>
-              <button type="submit" class="rag-send" aria-label="Gửi câu hỏi"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="m4 4 16 8-16 8 3-8-3-8Z"/><path d="M7 12h13"/></svg></button>
+              <button type="submit" class="rag-send" aria-label="Gửi câu hỏi">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="m4 4 16 8-16 8 3-8-3-8Z"/><path d="M7 12h13"/></svg>
+                <span class="rag-send-loader" aria-hidden="true"></span>
+              </button>
             </div>
           </div>
         </form>

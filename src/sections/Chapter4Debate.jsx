@@ -40,21 +40,21 @@ export default function Chapter4Debate() {
         </div>
         <div className="privatization-cover__shade" aria-hidden="true"></div>
         <div className="privatization-cover__copy">
-          <span className="kicker">Chương 4 · Điện và nước tại Việt Nam</span>
-          <h2>Vì sao chưa tư nhân hóa hoàn toàn?</h2>
-          <p>Đây không phải lựa chọn tuyệt đối giữa Nhà nước và tư nhân, mà là cách phân chia vai trò phù hợp với đặc điểm của hạ tầng thiết yếu.</p>
+          <span className="kicker reveal">Chương 4 · Điện và nước tại Việt Nam</span>
+          <h2 className="reveal">Vì sao chưa tư nhân hóa hoàn toàn?</h2>
+          <p className="reveal">Đây không phải lựa chọn tuyệt đối giữa Nhà nước và tư nhân, mà là cách phân chia vai trò phù hợp với đặc điểm của hạ tầng thiết yếu.</p>
         </div>
       </section>
 
       <section className="editorial-reasons" aria-labelledby="editorial-reasons-title">
-        <header className="editorial-reasons__head">
+        <header className="editorial-reasons__head reveal">
           <span className="kicker">Ba lý do cốt lõi</span>
           <h2 id="editorial-reasons-title">Những giới hạn<br />của tư nhân hóa hoàn toàn</h2>
         </header>
 
         <div className="editorial-reasons__list">
           {reasons.map((reason, index) => (
-            <article className="editorial-reason" key={reason.title}>
+            <article className="editorial-reason reveal" key={reason.title}>
               <div className="editorial-reason__copy">
                 <span className="editorial-reason__number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                 <h3>{reason.title}</h3>
@@ -73,19 +73,19 @@ export default function Chapter4Debate() {
       </section>
 
       <section className="vn-policy" aria-labelledby="vn-policy-title">
-        <div className="vn-policy__head">
+        <div className="vn-policy__head reveal">
           <span className="kicker">Hướng đi của Việt Nam</span>
           <h2 id="vn-policy-title">Giữ khâu lõi.<br />Mở khâu có thể cạnh tranh.</h2>
           <p>Nhà nước và tư nhân được phân vai theo tính chất của từng khâu trong hệ thống.</p>
         </div>
 
         <div className="vn-policy__split">
-          <article className="vn-policy__side vn-policy__side--state">
+          <article className="vn-policy__side vn-policy__side--state reveal">
             <span>Nhà nước giữ quyền chi phối</span>
             <h3>Bảo vệ hệ thống cốt lõi</h3>
             <ul><li>Truyền tải điện</li><li>Điều tiết hệ thống</li><li>Hạ tầng thiết yếu</li></ul>
           </article>
-          <article className="vn-policy__side vn-policy__side--market">
+          <article className="vn-policy__side vn-policy__side--market reveal">
             <span>Tư nhân được tham gia</span>
             <h3>Mở những khâu có thể cạnh tranh</h3>
             <ul><li>Phát điện</li><li>Năng lượng tái tạo</li><li>Công nghệ và dịch vụ</li></ul>

@@ -22,17 +22,17 @@ export default function Chapter5Final() {
   return (
     <section className="final" id="s-final">
       <section className="mindmap-summary" aria-labelledby="mindmap-title">
-        <header className="mindmap-summary__head">
+        <header className="mindmap-summary__head reveal">
           <span className="kicker">Tổng kết chuyên đề</span>
           <h2 id="mindmap-title">Toàn bộ nội dung<br />trong một sơ đồ</h2>
           <p>Từ khái niệm và nguyên nhân hình thành độc quyền đến độc quyền nhà nước và vấn đề tư nhân hóa điện, nước tại Việt Nam.</p>
         </header>
 
-        <button className="mindmap-summary__figure" type="button" onClick={() => setMindmapOpen(true)} aria-label="Mở sơ đồ tư duy toàn màn hình">
+        <button className="mindmap-summary__figure reveal" type="button" onClick={() => setMindmapOpen(true)} aria-label="Mở sơ đồ tư duy toàn màn hình">
           <img src={mindmapImage} alt="Sơ đồ tư duy tổng hợp chuyên đề độc quyền, độc quyền nhà nước và tư nhân hóa điện nước tại Việt Nam" />
           <span>Xem toàn màn hình</span>
         </button>
-        <p className="mindmap-summary__hint">Nhấn vào sơ đồ để xem chi tiết.</p>
+        <p className="mindmap-summary__hint reveal">Nhấn vào sơ đồ để xem chi tiết.</p>
       </section>
 
       {mindmapOpen && (
