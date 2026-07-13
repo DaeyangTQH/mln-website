@@ -452,7 +452,7 @@ figure {
   background:
     linear-gradient(180deg, rgba(3, 26, 34, .02) 0%, rgba(3, 26, 34, .10) 30%, rgba(3, 26, 34, .38) 58%, rgba(3, 26, 34, .72) 82%, var(--navy) 100%),
     linear-gradient(90deg, rgba(3, 26, 34, .28) 0%, rgba(3, 26, 34, 0) 22%, rgba(3, 26, 34, .24) 100%),
-    url(assets/pexels-tuan-vy-903011268-20237757.jpg) center -35vh / max(100vw, 1760px) auto no-repeat
+    url(assets/pexels-tuan-vy-903011268-20237757.webp) center -35vh / max(100vw, 1760px) auto no-repeat
 }
 
 /* ---------------- shared ---------------- */
