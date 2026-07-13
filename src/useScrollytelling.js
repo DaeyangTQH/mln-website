@@ -81,7 +81,6 @@ export function useScrollytelling() {
       if (heroIntroVisual) {
         gsap.to(heroIntroVisual, {
           y: innerWidth < 700 ? -36 : -120,
-          scale: innerWidth < 700 ? 1.015 : 1.04,
           ease: "none",
           scrollTrigger: {
             trigger: "#s-hero",
@@ -90,7 +89,6 @@ export function useScrollytelling() {
             scrub: true,
           },
         });
-        gsap.fromTo(heroIntroVisual, { scale: 1.08 }, { scale: 1, duration: 1.6, ease: "power2.out" });
       }
       // cinematic entrance: title lands line by line, keyword pops
       gsap
