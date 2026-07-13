@@ -4,7 +4,6 @@ import businessMergerSvg from "../../assets/Business merger-bro.svg";
 import growingSvg from "../../assets/Growing-bro.svg";
 import marketplaceSvg from "../../assets/Marketplace-pana.svg";
 import mountainOceanSvg from "../../assets/moutain-ocean.svg";
-import successFactorsSvg from "../../assets/Success factors-amico.svg";
 import chapterCover from "../../assets/pin-c1.jpg";
 import "./css/style-c1.css";
 
@@ -17,7 +16,7 @@ export default function Chapter1Monopoly() {
           <figure className="cover-frame reveal">
             <img src={chapterCover} alt="Nhiều đường hạ tầng hội tụ về một trung tâm" />
             <figcaption>
-              <span className="kicker">Chương 1 · Độc quyền là gì</span>
+              <span className="kicker">Chương 1 · Độc quyền</span>
               <h2>Khi dòng chảy thị trường<br />bị gom về một điểm</h2>
             </figcaption>
           </figure>
@@ -25,8 +24,8 @@ export default function Chapter1Monopoly() {
         {/* 05 ARTICLE + YELLOW CIRCLE */}
         <section className="article" id="s-article">
           <div className="article-layout">
-            <div className="monopoly-grid reveal">
-              <div className="monopoly-cluster monopoly-definition" role="group" aria-labelledby="monopoly-definition">
+            <article className="monopoly-article reveal" aria-label="Khái niệm và đặc điểm của độc quyền">
+              <section className="monopoly-article__section monopoly-definition" aria-labelledby="monopoly-definition">
                 <h3 id="monopoly-definition">Khái niệm</h3>
                 <ul className="monopoly-definition-list">
                   <li>Là sự liên minh giữa các <strong>doanh nghiệp lớn</strong>.</li>
@@ -34,8 +33,13 @@ export default function Chapter1Monopoly() {
                   <li>Có khả năng định ra giá cả độc quyền.</li>
                   <li>Mục đích cuối cùng là <strong>thu lợi nhuận độc quyền cao</strong>.</li>
                 </ul>
-              </div>
-              <div className="monopoly-cluster monopoly-traits" role="group" aria-labelledby="monopoly-traits">
+                <aside className="monopoly-note">
+                  <strong>Lưu ý:</strong>
+                  <span>Độc quyền không nhất thiết chỉ có một doanh nghiệp; nó có thể tồn tại dưới dạng <strong>độc quyền nhóm</strong>, khi một số ít doanh nghiệp lớn cùng chi phối thị trường.</span>
+                </aside>
+              </section>
+
+              <section className="monopoly-article__section monopoly-traits" aria-labelledby="monopoly-traits">
                 <h3 id="monopoly-traits">Đặc điểm</h3>
                 <ul>
                   <li>Chiếm thị phần rất lớn.</li>
@@ -45,20 +49,13 @@ export default function Chapter1Monopoly() {
                   <li>Hạn chế cạnh tranh.</li>
                   <li>Có khả năng thu lợi nhuận độc quyền cao.</li>
                 </ul>
-              </div>
-              <div className="monopoly-cluster" role="group" aria-labelledby="monopoly-note">
-                <h3 id="monopoly-note">Lưu ý</h3>
-                <ul>
-                  <li>Độc quyền không nhất thiết chỉ có một doanh nghiệp. Nó có thể tồn tại dưới dạng <strong>độc quyền nhóm</strong>, khi một số ít doanh nghiệp lớn cùng chi phối thị trường.</li>
-                </ul>
-              </div>
-              <div className="monopoly-cluster monopoly-example" role="group" aria-labelledby="monopoly-example">
-                <h3 id="monopoly-example">Ví dụ</h3>
-                <ul>
-                  <li>Grab tiếp nhận hoạt động của Uber tại Đông Nam Á khiến số đối thủ lớn giảm, thị trường gọi xe tập trung hơn và quyền lực thị trường của Grab tăng lên.</li>
-                </ul>
-              </div>
-            </div>
+              </section>
+
+              <aside className="monopoly-example" aria-label="Ví dụ về độc quyền">
+                <strong>Ví dụ</strong>
+                <p>Grab tiếp nhận hoạt động của Uber tại Đông Nam Á khiến số đối thủ lớn giảm, thị trường gọi xe tập trung hơn và quyền lực thị trường của Grab tăng lên.</p>
+              </aside>
+            </article>
             <div className="article-side">
               <div className="yellow-circle" data-float="">
                 <span className="ghost-num">1</span>
@@ -81,7 +78,7 @@ export default function Chapter1Monopoly() {
             <header className="monopoly-paths__head reveal">
               <span className="kicker">Cơ chế hình thành</span>
               <h2>Hai con đường dẫn tới độc quyền</h2>
-              <p>Trong nền kinh tế thị trường, độc quyền có thể được hình thành một cách tự nhiên, cũng có thể được hình thành bởi ý chí của Nhà nước tạo ra các tổ chức độc quyền.</p>
+              <p>Trong nền kinh tế thị trường, độc quyền có thể được hình thành <span className="text-highlight">một cách tự nhiên</span>, cũng có thể được hình thành bởi <span className="text-highlight">ý chí của Nhà nước</span> tạo ra các tổ chức độc quyền.</p>
             </header>
 
             <div className="monopoly-paths__compare">
@@ -122,15 +119,22 @@ export default function Chapter1Monopoly() {
           <Bubbles id="stageBubbles" count={46} />
         </div>
         <div className="causes-inner">
+          <header className="causes-heading reveal">
+            <h2>Chương 2. Nguyên nhân hình thành độc quyền</h2>
+          </header>
           <ol className="cause-timeline">
             <li className="cause-step" data-step="1">
               <div className="cause-fig">
                 <img className="cause-illust" src={growingSvg} alt="" />
               </div>
               <div className="cause-card">
-                <h3>Lực lượng<br />sản xuất</h3>
-                <span className="cause-phase">Vốn và công nghệ lớn</span>
-                <p>Khoa học - kỹ thuật phát triển làm sản xuất cần máy móc, công nghệ và vốn đầu tư ngày càng lớn. Doanh nghiệp phải tăng cường tích tụ và tập trung sản xuất, từ đó hình thành những doanh nghiệp quy mô lớn có khả năng chi phối thị trường, như trong ngành chip bán dẫn.</p>
+                <h3>Lực lượng sản xuất phát triển</h3>
+                <ul>
+                  <li>Khoa học - kỹ thuật phát triển → yêu cầu vốn đầu tư lớn.</li>
+                  <li>Doanh nghiệp tăng cường tích tụ và tập trung sản xuất.</li>
+                  <li>Hình thành các doanh nghiệp quy mô lớn → dẫn đến độc quyền.</li>
+                </ul>
+                <p className="cause-example"><em>Ví dụ:</em> Ngành sản xuất chip bán dẫn (TSMC, Samsung, Intel).</p>
               </div>
             </li>
             <li className="cause-step" data-step="2">
@@ -138,9 +142,13 @@ export default function Chapter1Monopoly() {
                 <img className="cause-illust" src={marketplaceSvg} alt="" />
               </div>
               <div className="cause-card">
-                <h3>Cạnh tranh<br />gay gắt</h3>
-                <span className="cause-phase">Đào thải và thâu tóm</span>
-                <p>Cạnh tranh thúc đẩy cải tiến nhưng cũng loại bỏ doanh nghiệp yếu. Những doanh nghiệp còn lại liên kết, sáp nhập hoặc mua lại đối thủ, làm sản xuất ngày càng tập trung và dẫn tới độc quyền, như trường hợp Grab tiếp nhận hoạt động của Uber tại Đông Nam Á.</p>
+                <h3>Cạnh tranh gay gắt</h3>
+                <ul>
+                  <li>Cạnh tranh làm doanh nghiệp yếu bị loại bỏ.</li>
+                  <li>Doanh nghiệp lớn liên kết, sáp nhập hoặc mua lại đối thủ.</li>
+                  <li>Tập trung sản xuất ngày càng cao → hình thành độc quyền.</li>
+                </ul>
+                <p className="cause-example"><em>Ví dụ:</em> Grab mua lại Uber.</p>
               </div>
             </li>
             <li className="cause-step" data-step="3">
@@ -148,19 +156,13 @@ export default function Chapter1Monopoly() {
                 <img className="cause-illust" src={businessMergerSvg} alt="" />
               </div>
               <div className="cause-card">
-                <h3>Khủng hoảng<br />và tín dụng</h3>
-                <span className="cause-phase">Tập trung tư bản nhanh hơn</span>
-                <p>Khủng hoảng làm nhiều doanh nghiệp nhỏ phá sản, còn doanh nghiệp lớn có thể mua lại tài sản và thị phần. Tín dụng, ngân hàng và công ty cổ phần giúp huy động nguồn vốn lớn, thúc đẩy tập trung tư bản, tập trung sản xuất và sự ra đời của các tổ chức độc quyền.</p>
-              </div>
-            </li>
-            <li className="cause-step climax" data-step="4">
-              <div className="cause-fig">
-                <img className="cause-illust" src={successFactorsSvg} alt="" />
-              </div>
-              <div className="cause-card">
-                <h3>Độc quyền hình thành</h3>
-                <span className="cause-phase">Chi phối thị trường</span>
-                <p>Khi sản xuất tập trung vào số ít doanh nghiệp lớn, họ có khả năng chi phối thị trường, kiểm soát giá, sản lượng và điều kiện mua bán. Đây là điểm cạnh tranh tự do chuyển hóa thành độc quyền.</p>
+                <h3>Khủng hoảng kinh tế và hệ thống tín dụng</h3>
+                <ul>
+                  <li>Khủng hoảng kinh tế làm nhiều doanh nghiệp nhỏ phá sản.</li>
+                  <li>Hệ thống tín dụng và công ty cổ phần giúp huy động nguồn vốn lớn.</li>
+                  <li>Thúc đẩy tập trung tư bản, tập trung sản xuất và sự ra đời của các tổ chức độc quyền.</li>
+                </ul>
+                <p className="cause-example"><em>Ví dụ:</em> Doanh nghiệp lớn mua lại doanh nghiệp nhỏ sau khủng hoảng.</p>
               </div>
             </li>
           </ol>

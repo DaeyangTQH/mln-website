@@ -32,7 +32,7 @@ export default function Chapter2State() {
 
         <section className="migration-intro" id="s-state">
           <div className="mi-content">
-            <span className="kicker">Chương 2 · Độc quyền nhà nước</span>
+            <span className="kicker">Chương 3 · Độc quyền nhà nước và liên hệ</span>
             <h2 className="reveal">Độc quyền nhà nước là gì?</h2>
             <ul className="mi-concept-list">
               <li className="reveal">Nhà nước giữ vị thế độc quyền ở lĩnh vực then chốt.</li>
