@@ -4,6 +4,10 @@ import industryImage from "../../assets/kcn-ver.jpg";
 import nationalAssemblyImage from "../../assets/quochoi (2).jpg";
 import portImage from "../../assets/cảng.jpg";
 import industrialAreaImage from "../../assets/industrial-area.jpg";
+import stateCauseProduction from "../../assets/dqnn-nn/nn1.webp";
+import stateCauseInvestment from "../../assets/dqnn-nn/nn2.webp";
+import stateCauseConflict from "../../assets/dqnn-nn/nn3.webp";
+import stateCauseGlobalization from "../../assets/dqnn-nn/nn4.webp";
 
 export default function Chapter2State() {
   return (
@@ -68,10 +72,10 @@ export default function Chapter2State() {
             {/* lớp ảnh minh hoạ: mỗi bước 1 ảnh phủ trọn khung, đổi khi cuộn */}
             <div className="reg-camera">
               <div className="river-photos" aria-hidden="true">
-                <div className="river-photo" data-step="1" style={{ backgroundImage: "url('/assets/reg5-city.jpg')" }} />
-                <div className="river-photo" data-step="2" style={{ backgroundImage: "url('/assets/reg1-price.jpg')" }} />
-                <div className="river-photo" data-step="3" style={{ backgroundImage: "url('/assets/reg4-rural.jpg')" }} />
-                <div className="river-photo" data-step="4" style={{ backgroundImage: "url('/assets/reg3-grid.jpg')" }} />
+                <div className="river-photo" data-step="1" style={{ backgroundImage: `url(${stateCauseProduction})` }} />
+                <div className="river-photo" data-step="2" style={{ backgroundImage: `url(${stateCauseInvestment})` }} />
+                <div className="river-photo" data-step="3" style={{ backgroundImage: `url(${stateCauseConflict})` }} />
+                <div className="river-photo" data-step="4" style={{ backgroundImage: `url(${stateCauseGlobalization})` }} />
               </div>
               <div className="river-fog" aria-hidden="true" />
               <svg className="regulator-svg river-svg" viewBox="0 0 900 620" aria-hidden="true">
@@ -130,8 +134,6 @@ export default function Chapter2State() {
                   <circle className="st-gate" r="30" />
                   <circle className="st-socket" r="40" />
                 </g>
-                <text className="river-label" x="34" y="596">thị trường tự do</text>
-                <text className="river-label end" x="878" y="120" textAnchor="end">quyền lực nhà nước</text>
               </svg>
               <Hotspot className="regulator-hotspot" regStep={1} index={1} icon="factory" title="Tích tụ và tập trung sản xuất" body="Sản xuất ngày càng tập trung vào các tổ chức độc quyền lớn, làm quyền lực kinh tế vượt khỏi phạm vi từng doanh nghiệp và đòi hỏi sự can thiệp sâu hơn của Nhà nước." style={{ left: "18.3%", top: "75.8%" }} />
               <Hotspot className="regulator-hotspot" regStep={2} index={2} icon="landmark" title="Tư nhân không đủ khả năng đầu tư" body="Một số ngành cần lượng vốn rất lớn, thời gian thu hồi dài hoặc lợi nhuận thấp, khiến tư nhân không muốn hoặc không đủ khả năng đầu tư. Nhà nước phải trực tiếp đảm nhận hoặc hỗ trợ." style={{ left: "35.6%", top: "79.8%" }} />

@@ -1,4 +1,8 @@
-import electricPylonImage from "../../assets/electric-pylon.jpg";
+import chapterElectricImage from "../../assets/c4/dien.webp";
+import chapterWaterImage from "../../assets/c4/nuoc.webp";
+import naturalMonopolyImage from "../../assets/c4-lydo/ld1.webp";
+import essentialServicesImage from "../../assets/c4-lydo/ld2.webp";
+import highUtilityBillImage from "../../assets/c4-lydo/ld3.webp";
 
 const reasons = [
   {
@@ -9,24 +13,24 @@ const reasons = [
       "Không thể mỗi công ty điện xây một hệ thống đường dây truyền tải riêng.",
       "Không thể mỗi công ty nước xây một mạng lưới ống nước riêng.",
     ],
-    image: electricPylonImage,
-    alt: "Hệ thống đường dây truyền tải điện cao áp",
+    image: naturalMonopolyImage,
+    alt: "Hệ thống hạ tầng điện và nước trải rộng trên một khu vực dân cư",
   },
   {
     title: "Ngành thiết yếu",
     lead: "Điện và nước duy trì hoạt động của toàn xã hội.",
     body: "Khả năng tiếp cận hai dịch vụ này ảnh hưởng trực tiếp đến nhiều lĩnh vực quan trọng.",
     facts: ["Đời sống người dân", "Hoạt động của doanh nghiệp", "Quốc phòng và an ninh", "Phát triển kinh tế – xã hội"],
-    image: "/assets/reg5-city.jpg",
-    alt: "Đô thị phụ thuộc vào nguồn cung điện và nước ổn định",
+    image: essentialServicesImage,
+    alt: "Trẻ em tiếp cận nguồn nước sạch phục vụ nhu cầu thiết yếu",
   },
   {
     title: "Tránh độc quyền tư nhân",
     lead: "Tư nhân hóa hoàn toàn không đồng nghĩa với cạnh tranh.",
     body: "Khi hạ tầng vẫn chỉ có một mạng lưới, quyền lực độc quyền có thể chuyển từ Nhà nước sang doanh nghiệp tư nhân.",
     facts: ["Giá dịch vụ có nguy cơ tăng cao", "Khó phục vụ vùng sâu, vùng xa", "Lợi ích công cộng có thể bị ảnh hưởng"],
-    image: "/assets/reg1-price.jpg",
-    alt: "Hạ tầng cấp nước phục vụ khu dân cư",
+    image: highUtilityBillImage,
+    alt: "Người dân lo lắng trước chi phí hóa đơn điện và nước quá cao",
   },
 ];
 
@@ -35,8 +39,8 @@ export default function Chapter4Debate() {
     <>
       <section className="privatization-cover" id="s-debate">
         <div className="privatization-cover__media" aria-hidden="true">
-          <figure><img src="/assets/reg5-city.jpg" alt="" /></figure>
-          <figure><img src="/assets/reg2-quality.jpg" alt="" /></figure>
+          <figure><img src={chapterElectricImage} alt="" /></figure>
+          <figure><img src={chapterWaterImage} alt="" /></figure>
         </div>
         <div className="privatization-cover__shade" aria-hidden="true"></div>
         <div className="privatization-cover__copy">

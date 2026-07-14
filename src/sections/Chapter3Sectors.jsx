@@ -1,23 +1,23 @@
-import portImage from "../../assets/cảng.jpg";
-import parliamentImage from "../../assets/quochoi (2).jpg";
-import industryImage from "../../assets/industrial-area.jpg";
+import mixedEconomyImage from "../../assets/lhvn/nhieutptt.jpg";
+import stateRoleImage from "../../assets/lhvn/nnuoc.jpg";
+import publicInterestImage from "../../assets/lhvn/loiichchung.jpg";
 
 const principles = [
   {
-    image: portImage,
-    alt: "Cảng hàng hóa với nhiều chủ thể cùng tham gia hoạt động kinh tế",
+    image: mixedEconomyImage,
+    alt: "Khu công nghiệp quy mô lớn với nhiều thành phần kinh tế cùng tham gia sản xuất",
     title: "Nhiều thành phần cùng tồn tại",
     body: "Kinh tế nhà nước, kinh tế tư nhân, kinh tế có vốn FDI và kinh tế tập thể cùng hợp tác, cạnh tranh theo pháp luật."
   },
   {
-    image: parliamentImage,
-    alt: "Tòa nhà Quốc hội đại diện cho vai trò định hướng và điều tiết của Nhà nước",
+    image: stateRoleImage,
+    alt: "Công trình Nhà nước Việt Nam đại diện cho vai trò định hướng và điều tiết nền kinh tế",
     title: "Nhà nước giữ vai trò chủ đạo",
     body: "Nhà nước định hướng, điều tiết và giữ quyền chi phối ở điện, nước, tiền tệ, quốc phòng cùng các hạ tầng chiến lược."
   },
   {
-    image: industryImage,
-    alt: "Khu công nghiệp đại diện cho mục tiêu phát triển kinh tế và lợi ích chung",
+    image: publicInterestImage,
+    alt: "Mạng lưới kết nối con người đại diện cho mục tiêu ổn định và lợi ích chung",
     title: "Hướng tới lợi ích chung",
     body: "Vai trò của Nhà nước nhằm ổn định kinh tế vĩ mô, bảo đảm an sinh xã hội, quốc phòng, an ninh và lợi ích công cộng."
   }

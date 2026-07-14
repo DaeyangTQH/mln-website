@@ -625,10 +625,15 @@ blockquote {
 }
 
 .hero-title .row {
+  position: relative;
   display: flex;
   align-items: baseline;
   gap: .14em
 }
+
+.hero-title .row:nth-child(1) { z-index: 3 }
+.hero-title .row:nth-child(2) { z-index: 2 }
+.hero-title .row:nth-child(3) { z-index: 1 }
 
 .hero-title b {
   font-weight: 600;
@@ -648,8 +653,8 @@ blockquote {
   position: relative;
   z-index: 0;
   margin-left: .08em;
-  padding: .06em .22em .1em;
-  color: #102a33;
+  padding: .02em .22em .06em;
+  color: #c83d35;
   font-weight: 700;
   line-height: .92;
   text-shadow: none;
@@ -660,10 +665,10 @@ blockquote {
   content: "";
   position: absolute;
   z-index: -1;
-  inset: -.04em -.08em -.01em;
+  inset: .02em -.08em .01em;
   border-radius: .08em;
-  background: linear-gradient(96deg, #f5c542, #ffd96a 72%, #f0b82f);
-  box-shadow: .08em .1em 0 rgba(3, 26, 34, .2);
+  background: linear-gradient(96deg, #fff4df, #fffaf0 72%, #f1dfbf);
+  box-shadow: .08em .1em 0 rgba(3, 26, 34, .22);
   transform: skewX(-5deg);
 }
 
@@ -9304,7 +9309,7 @@ body.mindmap-open { overflow: hidden }
 }
 
 .privatization-cover__media figure:first-child img {
-  object-position: 62% center
+  object-position: 50% center
 }
 
 .privatization-cover__media figure:last-child img {
@@ -9723,11 +9728,12 @@ body.mindmap-open { overflow: hidden }
   }
 
   .privatization-cover__media {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr)
   }
 
   .privatization-cover__media figure:last-child {
-    display: none
+    display: block
   }
 
   .privatization-cover__copy {

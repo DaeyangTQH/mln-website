@@ -242,7 +242,7 @@
   line-height: 1.45;
 }
 
-.monopoly-cluster li + li {
+.monopoly-cluster li+li {
   margin-top: 9px;
 }
 
@@ -271,8 +271,8 @@
   margin-bottom: 12px;
 }
 
-.monopoly-definition-list li + li,
-.monopoly-traits li + li {
+.monopoly-definition-list li+li,
+.monopoly-traits li+li {
   margin-top: 5px;
 }
 
@@ -490,11 +490,11 @@
   padding: clamp(34px, 4vw, 54px) clamp(32px, 5vw, 72px) clamp(38px, 5vw, 62px);
 }
 
-.monopoly-path > * {
+.monopoly-path>* {
   width: min(100%, 520px);
 }
 
-.monopoly-path + .monopoly-path {
+.monopoly-path+.monopoly-path {
   border-left: 1px solid rgba(16, 42, 51, .18);
 }
 
@@ -560,7 +560,7 @@
   line-height: 1.6;
 }
 
-.monopoly-path li + li {
+.monopoly-path li+li {
   margin-top: 12px;
 }
 
@@ -683,7 +683,7 @@
   height: clamp(96px, 12vh, 122px);
   display: flex;
   align-items: flex-end;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 0 16px 14px
 }
 
@@ -696,10 +696,10 @@
 
 .cause-illust {
   display: block;
-  width: clamp(96px, 9vw, 144px);
+  width: clamp(140px, 14vw, 210px);
   max-width: none;
   height: auto;
-  max-height: clamp(90px, 10vh, 112px);
+  max-height: clamp(125px, 15vh, 175px);
   object-fit: contain;
   object-position: left bottom;
   user-select: none;
@@ -773,7 +773,7 @@
   line-height: 1.58;
 }
 
-.cause-card li + li {
+.cause-card li+li {
   margin-top: 10px;
 }
 
@@ -836,7 +836,7 @@
   transform: scale(1);
 }
 
-.cause-step.climax .cause-card > * {
+.cause-step.climax .cause-card>* {
   position: relative;
   z-index: 1;
 }
@@ -1012,11 +1012,11 @@
   }
 
   .monopoly-path,
-  .monopoly-path + .monopoly-path {
+  .monopoly-path+.monopoly-path {
     padding: 34px 0 38px;
   }
 
-  .monopoly-path + .monopoly-path {
+  .monopoly-path+.monopoly-path {
     border-top: 1px solid rgba(16, 42, 51, .18);
     border-left: 0;
   }
@@ -1200,9 +1200,13 @@
     padding-bottom: 76px
   }
 
-  .article-layout { gap: 24px }
+  .article-layout {
+    gap: 24px
+  }
 
-  .monopoly-grid { gap: 8px }
+  .monopoly-grid {
+    gap: 8px
+  }
 
   .monopoly-cluster {
     padding: 20px 4px 22px;
@@ -1220,7 +1224,9 @@
     line-height: 1.55
   }
 
-  .article-side { min-height: 240px }
+  .article-side {
+    min-height: 240px
+  }
 
   .yellow-circle {
     width: 205px;
@@ -1231,9 +1237,13 @@
     padding: 76px 16px 82px
   }
 
-  .causes-inner { padding-inline: 0 }
+  .causes-inner {
+    padding-inline: 0
+  }
 
-  .cause-timeline { gap: 38px }
+  .cause-timeline {
+    gap: 38px
+  }
 
   .cause-step,
   .cause-step.climax {
@@ -1267,7 +1277,9 @@
     border-top-color: rgba(184, 137, 31, .35)
   }
 
-  .cause-card h3 { font-size: clamp(25px, 8vw, 31px) }
+  .cause-card h3 {
+    font-size: clamp(25px, 8vw, 31px)
+  }
 
   .cause-card p {
     font-size: 15px;
@@ -1296,7 +1308,7 @@
   padding: 0
 }
 
-.monopoly-article__section + .monopoly-article__section {
+.monopoly-article__section+.monopoly-article__section {
   padding-left: clamp(24px, 3vw, 42px);
   border-left: 1px solid rgba(16, 42, 51, .18)
 }
@@ -1337,7 +1349,7 @@
   line-height: 1.58
 }
 
-.monopoly-note > strong {
+.monopoly-note>strong {
   color: #8b6814
 }
 
@@ -1352,7 +1364,7 @@
   color: #6c787a
 }
 
-.monopoly-example > strong {
+.monopoly-example>strong {
   display: block;
   margin-bottom: 6px;
   color: #8b6814;
@@ -1381,9 +1393,11 @@
     padding: 30px 0
   }
 
-  .monopoly-article__section:first-child { padding-top: 0 }
+  .monopoly-article__section:first-child {
+    padding-top: 0
+  }
 
-  .monopoly-article__section + .monopoly-article__section {
+  .monopoly-article__section+.monopoly-article__section {
     padding-left: 0;
     border-top: 1px solid rgba(16, 42, 51, .18);
     border-left: 0
@@ -1394,13 +1408,32 @@
     width: 100%
   }
 
-  .article-side { grid-column: 1 }
+  .article-side {
+    grid-column: 1
+  }
 }
 
 @media(max-width:560px) {
-  .monopoly-article__section { padding: 30px 0 }
-  .monopoly-article h3 { font-size: 34px; margin-bottom: 18px }
-  .monopoly-article ul { font-size: 15px; gap: 11px }
-  .monopoly-note { grid-template-columns: 1fr; padding: 16px 16px }
-  .monopoly-example { padding: 16px }
+  .monopoly-article__section {
+    padding: 30px 0
+  }
+
+  .monopoly-article h3 {
+    font-size: 34px;
+    margin-bottom: 18px
+  }
+
+  .monopoly-article ul {
+    font-size: 15px;
+    gap: 11px
+  }
+
+  .monopoly-note {
+    grid-template-columns: 1fr;
+    padding: 16px 16px
+  }
+
+  .monopoly-example {
+    padding: 16px
+  }
 }
