@@ -31,7 +31,7 @@ export default function Chapter3Sectors() {
       <section className="vn-frame" id="s-vietnam">
         <div className="vn-frame-inner">
           <div className="vn-frame-copy">
-            <span className="kicker">Chương 3 · Liên hệ tại Việt Nam</span>
+            <span className="kicker">Chương 4 · Liên hệ tại Việt Nam</span>
             <h2 className="reveal">Thị trường vận hành, Nhà nước định hướng</h2>
             <p className="vn-lead reveal">Việt Nam vận hành nền kinh tế thị trường định hướng xã hội chủ nghĩa, với nhiều thành phần kinh tế cùng tồn tại, hợp tác và cạnh tranh theo pháp luật.</p>
             <p className="vn-distinction reveal"><strong>Khác biệt cốt lõi</strong>Vai trò chủ đạo của Nhà nước tại Việt Nam không nhằm thu lợi nhuận độc quyền cao, mà hướng tới ổn định và lợi ích công cộng.</p>

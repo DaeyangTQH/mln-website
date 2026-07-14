@@ -26,7 +26,7 @@ export function useScrollytelling() {
       document.documentElement.style.scrollBehavior = "auto";
       const st = document.createElement("style");
       st.textContent = `
-        .reveal,.ql,.cause-step,.yellow-circle,.final-circle{opacity:1!important;transform:none!important;filter:none!important}
+        .reveal,.ql,.cause-step,[data-cause-reveal],.yellow-circle,.final-circle{opacity:1!important;transform:none!important;filter:none!important}
         .market-core{opacity:1!important;transform:translate(-50%,-50%) scale(1)!important;filter:none!important}
         .hotspot{transform:translate(-50%,-50%) scale(1)!important}
         .hotspot.mini{transform:scale(1)!important}
@@ -190,7 +190,7 @@ export function useScrollytelling() {
         );
       });
 
-      const causeSteps = gsap.utils.toArray(".cause-step");
+      const causeSteps = gsap.utils.toArray(".cause-step, [data-cause-reveal]");
       const spineFill = $("#spineFill");
       const bubbleLayer = $("#stageBubbles");
       if (causeSteps.length) {
@@ -295,7 +295,7 @@ export function useScrollytelling() {
       $$(".hotspot").forEach((e) => {
         e.style.transform = e.classList.contains("mini") ? "scale(1)" : "translate(-50%,-50%) scale(1)";
       });
-      $$(".cause-step").forEach((e) => e.classList.add("in"));
+      $$(".cause-step, [data-cause-reveal]").forEach((e) => e.classList.add("in"));
       $$("[data-reason-step]").forEach((e) => e.classList.add("is-active"));
       const spineFill = $("#spineFill");
       if (spineFill) spineFill.style.width = "100%";

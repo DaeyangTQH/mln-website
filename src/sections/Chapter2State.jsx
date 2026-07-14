@@ -1,5 +1,5 @@
 import { Hotspot } from "../components/Hotspot.jsx";
-import parliamentImage from "../../assets/nhanuoc.jpg";
+import whiteHouseImage from "../../assets/nahtrang.jpg";
 import industryImage from "../../assets/kcn-ver.jpg";
 import nationalAssemblyImage from "../../assets/quochoi (2).jpg";
 import portImage from "../../assets/cảng.jpg";
@@ -23,7 +23,11 @@ export default function Chapter2State() {
             </div>
             <div className="pub-right">
               <figure className="pub-img pub-pop reveal"><img src={industrialAreaImage} alt="Khu công nghiệp rộng lớn, biểu hiện sự tập trung sản xuất và tư bản" /></figure>
-              <h2 className="pub-title reveal">Vì sao độc quyền tư nhân lại cần đến<br /> <span>quyền lực Nhà nước?</span></h2>
+              <h2 className="pub-title reveal">
+                <span className="pub-title-line pub-title-main">Khi độc quyền phát triển,</span><br />{" "}
+                <span className="pub-title-line">vì sao vai trò của Nhà nước</span><br />{" "}
+                <span className="pub-title-line">lại ngày càng lớn?</span>
+              </h2>
               <div className="pub-body reveal">
                 <p>Một doanh nghiệp lớn có thể chi phối một thị trường. Nhưng khi nhiều tổ chức độc quyền cùng vươn tới ngân hàng, công nghiệp, hạ tầng và chính sách, câu chuyện không còn chỉ nằm trong phạm vi mua bán thông thường.</p>
                 <p>Ở điểm đó, quyền lực kinh tế bắt đầu tạo ra những áp lực vượt khỏi từng doanh nghiệp riêng lẻ. Phần tiếp theo lần theo các áp lực ấy để thấy vì sao Nhà nước ngày càng bị kéo sâu vào nền kinh tế.</p>
@@ -36,14 +40,17 @@ export default function Chapter2State() {
 
         <section className="migration-intro" id="s-state">
           <div className="mi-content">
-            <span className="kicker">Chương 3 · Độc quyền nhà nước và liên hệ</span>
+            <span className="kicker">Chương 3 · Độc quyền nhà nước</span>
             <h2 className="reveal">Độc quyền nhà nước là gì?</h2>
             <div className="mi-state-grid">
               <article className="mi-state-block reveal">
                 <span className="mi-state-index">01</span>
                 <h3>Khái niệm</h3>
-                <p>Độc quyền nhà nước là tình trạng Nhà nước nắm giữ vị thế độc quyền trong một số lĩnh vực then chốt của nền kinh tế, qua đó tạo sức mạnh vật chất nhằm bảo đảm sự ổn định về kinh tế, chính trị và xã hội trong từng giai đoạn lịch sử.</p>
-                <p>Đây là hiện tượng phổ biến trong nền kinh tế thị trường, nhưng phạm vi và mức độ biểu hiện khác nhau tùy thuộc vào điều kiện của mỗi quốc gia.</p>
+                <ul className="mi-state-concept-points">
+                  <li>Nhà nước nắm giữ vị thế độc quyền trong một số lĩnh vực then chốt của nền kinh tế.</li>
+                  <li>Qua đó tạo ra sức mạnh vật chất để thực hiện các mục tiêu quản lý và điều tiết.</li>
+                  <li>Nhằm bảo đảm sự ổn định về kinh tế, chính trị và xã hội trong từng giai đoạn lịch sử.</li>
+                </ul>
               </article>
 
               <article className="mi-state-block mi-state-capitalism reveal">
@@ -163,7 +170,7 @@ export default function Chapter2State() {
 
           <figure className="essence-diptych reveal" aria-label="Sự kết hợp giữa quyền lực Nhà nước và tư bản độc quyền">
             <div className="essence-photo state-power">
-              <img src={parliamentImage} alt="Tòa nhà Quốc hội, biểu tượng cho quyền lực Nhà nước" />
+              <img src={whiteHouseImage} alt="Nhà Trắng, biểu tượng cho quyền lực Nhà nước" />
               <span>Quyền lực Nhà nước</span>
             </div>
             <div className="essence-photo monopoly-power">

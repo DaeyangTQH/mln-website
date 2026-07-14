@@ -51,10 +51,6 @@ export default function Chapter1Monopoly() {
                 </ul>
               </section>
 
-              <aside className="monopoly-example" aria-label="Ví dụ về độc quyền">
-                <strong>Ví dụ</strong>
-                <p>Grab tiếp nhận hoạt động của Uber tại Đông Nam Á khiến số đối thủ lớn giảm, thị trường gọi xe tập trung hơn và quyền lực thị trường của Grab tăng lên.</p>
-              </aside>
             </article>
             <div className="article-side">
               <div className="yellow-circle" data-float="">
@@ -114,14 +110,21 @@ export default function Chapter1Monopoly() {
         </section>
       </div>
       {/* 06 CAUSE TIMELINE — nguyên nhân hình thành độc quyền */}
-      <section className="stages causes-sec light" id="s-stages">
+      <section className="causes-chapter-intro light" id="s-stages">
+        <div className="causes-chapter-intro__bubbles" aria-hidden="true">
+          <Bubbles count={20} />
+        </div>
+        <header className="causes-heading reveal">
+          <span className="kicker causes-chapter-label">Chương 2 · Nguyên nhân hình thành độc quyền</span>
+          <h2>Độc quyền được hình thành như thế nào?</h2>
+        </header>
+      </section>
+
+      <section className="stages causes-sec light">
         <div className="causes-atmos" aria-hidden="true">
           <Bubbles id="stageBubbles" count={46} />
         </div>
         <div className="causes-inner">
-          <header className="causes-heading reveal">
-            <h2>Chương 2. Nguyên nhân hình thành độc quyền</h2>
-          </header>
           <ol className="cause-timeline">
             <li className="cause-step" data-step="1">
               <div className="cause-fig">
@@ -166,11 +169,13 @@ export default function Chapter1Monopoly() {
               </div>
             </li>
           </ol>
-          <blockquote className="cause-quote reveal">
-            <p>“Tự do cạnh tranh đẻ ra tập trung sản xuất, và tập trung sản xuất phát triển đến một mức độ nhất định sẽ dẫn tới độc quyền.”</p>
-            <cite>V.I. Lênin</cite>
-          </blockquote>
-          <p className="source-note reveal">Nguồn: Giáo trình Kinh tế chính trị Mác-Lênin, Chương 4.</p>
+          <div className="cause-quote-group" data-cause-reveal>
+            <blockquote className="cause-quote">
+              <p>“Tự do cạnh tranh đẻ ra tập trung sản xuất, và tập trung sản xuất phát triển đến một mức độ nhất định sẽ dẫn tới độc quyền.”</p>
+              <cite>V.I. Lênin</cite>
+            </blockquote>
+            <p className="source-note">Nguồn: Giáo trình Kinh tế chính trị Mác-Lênin, Chương 4.</p>
+          </div>
         </div>
       </section>    </>
   );

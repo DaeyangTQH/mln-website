@@ -2,13 +2,14 @@ import chapterElectricImage from "../../assets/c4/dien.webp";
 import chapterWaterImage from "../../assets/c4/nuoc.webp";
 import naturalMonopolyImage from "../../assets/c4-lydo/ld1.webp";
 import essentialServicesImage from "../../assets/c4-lydo/ld2.webp";
-import highUtilityBillImage from "../../assets/c4-lydo/ld3.webp";
+import highUtilityBillImage from "../../assets/c4-lydo/ld3-private-monopoly.png";
 
 const reasons = [
   {
-    title: "Độc quyền tự nhiên",
-    lead: "Chi phí đầu tư hạ tầng rất lớn.",
-    body: "Việc nhiều doanh nghiệp cùng xây các hệ thống hạ tầng song song vừa lãng phí vừa kém hiệu quả.",
+    title: "Đây là ngành độc quyền tự nhiên",
+    lead: "Chi phí đầu tư rất lớn.",
+    body: "Không hiệu quả nếu nhiều doanh nghiệp cùng xây hệ thống hạ tầng.",
+    factsLabel: "Ví dụ:",
     facts: [
       "Không thể mỗi công ty điện xây một hệ thống đường dây truyền tải riêng.",
       "Không thể mỗi công ty nước xây một mạng lưới ống nước riêng.",
@@ -17,18 +18,16 @@ const reasons = [
     alt: "Hệ thống hạ tầng điện và nước trải rộng trên một khu vực dân cư",
   },
   {
-    title: "Ngành thiết yếu",
-    lead: "Điện và nước duy trì hoạt động của toàn xã hội.",
-    body: "Khả năng tiếp cận hai dịch vụ này ảnh hưởng trực tiếp đến nhiều lĩnh vực quan trọng.",
-    facts: ["Đời sống người dân", "Hoạt động của doanh nghiệp", "Quốc phòng và an ninh", "Phát triển kinh tế – xã hội"],
+    title: "Đây là ngành thiết yếu",
+    lead: "Điện và nước ảnh hưởng trực tiếp đến:",
+    facts: ["Đời sống người dân", "Hoạt động của doanh nghiệp", "Quốc phòng", "An ninh", "Phát triển kinh tế - xã hội"],
     image: essentialServicesImage,
     alt: "Trẻ em tiếp cận nguồn nước sạch phục vụ nhu cầu thiết yếu",
   },
   {
-    title: "Tránh độc quyền tư nhân",
-    lead: "Tư nhân hóa hoàn toàn không đồng nghĩa với cạnh tranh.",
-    body: "Khi hạ tầng vẫn chỉ có một mạng lưới, quyền lực độc quyền có thể chuyển từ Nhà nước sang doanh nghiệp tư nhân.",
-    facts: ["Giá dịch vụ có nguy cơ tăng cao", "Khó phục vụ vùng sâu, vùng xa", "Lợi ích công cộng có thể bị ảnh hưởng"],
+    title: "Tránh thay độc quyền nhà nước bằng độc quyền tư nhân",
+    lead: "Nếu tư nhân hóa hoàn toàn:",
+    facts: ["Có thể hình thành độc quyền tư nhân.", "Giá dịch vụ có nguy cơ tăng cao.", "Khó bảo đảm phục vụ vùng sâu, vùng xa.", "Ảnh hưởng đến lợi ích công cộng."],
     image: highUtilityBillImage,
     alt: "Người dân lo lắng trước chi phí hóa đơn điện và nước quá cao",
   },
@@ -63,7 +62,8 @@ export default function Chapter4Debate() {
                 <span className="editorial-reason__number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                 <h3>{reason.title}</h3>
                 <strong>{reason.lead}</strong>
-                <p>{reason.body}</p>
+                {reason.body && <p>{reason.body}</p>}
+                {reason.factsLabel && <span className="editorial-reason__facts-label">{reason.factsLabel}</span>}
                 <ul>
                   {reason.facts.map((fact) => <li key={fact}>{fact}</li>)}
                 </ul>
