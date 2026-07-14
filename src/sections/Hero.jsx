@@ -8,7 +8,7 @@ export default function Hero() {
       </div>
       <h1 className="hero-title">
         <span className="row"><b>Nếu điện</b><i>&amp;</i></span>
-        <span className="row"><b>nước</b><i>được giao</i></span>
+        <span className="row"><b>nước</b><i className="hero-highlight">được giao</i></span>
         <span className="row"><i>hoàn toàn cho</i><b className="w">thị trường?</b></span>
       </h1>
     </section>

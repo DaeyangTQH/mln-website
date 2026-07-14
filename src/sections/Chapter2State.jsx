@@ -34,15 +34,29 @@ export default function Chapter2State() {
           <div className="mi-content">
             <span className="kicker">Chương 3 · Độc quyền nhà nước và liên hệ</span>
             <h2 className="reveal">Độc quyền nhà nước là gì?</h2>
-            <ul className="mi-concept-list">
-              <li className="reveal">Nhà nước giữ vị thế độc quyền ở lĩnh vực then chốt.</li>
-              <li className="reveal">Kết hợp sức mạnh Nhà nước và tư bản độc quyền.</li>
-              <li className="reveal">Mang tính phổ biến trong nền kinh tế thị trường.</li>
-            </ul>
-          </div>
-          <div className="mi-concept-note reveal">
-            <span className="mi-concept-note__lead">Độc quyền nhà nước trong chủ nghĩa tư bản<br/> <strong>không chỉ là Nhà nước sở hữu doanh nghiệp</strong></span>
-            <span className="mi-concept-note__body">mà là sự kết hợp giữa quyền lực nhà nước và các tổ chức tư bản độc quyền.</span>
+            <div className="mi-state-grid">
+              <article className="mi-state-block reveal">
+                <span className="mi-state-index">01</span>
+                <h3>Khái niệm</h3>
+                <p>Độc quyền nhà nước là tình trạng Nhà nước nắm giữ vị thế độc quyền trong một số lĩnh vực then chốt của nền kinh tế, qua đó tạo sức mạnh vật chất nhằm bảo đảm sự ổn định về kinh tế, chính trị và xã hội trong từng giai đoạn lịch sử.</p>
+                <p>Đây là hiện tượng phổ biến trong nền kinh tế thị trường, nhưng phạm vi và mức độ biểu hiện khác nhau tùy thuộc vào điều kiện của mỗi quốc gia.</p>
+              </article>
+
+              <article className="mi-state-block mi-state-capitalism reveal">
+                <span className="mi-state-index">02</span>
+                <h3>Trong chủ nghĩa tư bản</h3>
+                <p className="mi-state-intro">Độc quyền nhà nước được hình thành trên cơ sở:</p>
+                <ul>
+                  <li>Sự kết hợp giữa sức mạnh của các tổ chức độc quyền tư nhân, độc quyền nhóm với quyền lực của Nhà nước.</li>
+                  <li>Sự tham gia và chi phối ngày càng mạnh của tư bản độc quyền, đặc biệt là tư bản tài chính, đối với chính sách và hoạt động kinh tế của Nhà nước.</li>
+                  <li>Nhà nước sử dụng quyền lực và nguồn lực công để điều tiết nền kinh tế, bảo vệ lợi ích của các tổ chức độc quyền và duy trì sự ổn định của hệ thống.</li>
+                </ul>
+                <aside className="mi-state-note">
+                  <strong>Lưu ý:</strong>
+                  <span>Độc quyền nhà nước trong chủ nghĩa tư bản không chỉ là việc Nhà nước sở hữu doanh nghiệp, mà còn là sự kết hợp giữa quyền lực nhà nước với sức mạnh của các tổ chức tư bản độc quyền.</span>
+                </aside>
+              </article>
+            </div>
           </div>
         </section>
 
@@ -87,10 +101,6 @@ export default function Chapter2State() {
                   <path className="river-flow" d="M40,560 C90,520 120,500 165,470 C215,438 270,470 320,495 C375,522 420,400 470,355 C520,312 575,345 625,320 C685,290 735,240 775,195 C815,158 845,140 868,120" />
                   <path className="river-foam" d="M40,560 C90,520 120,500 165,470 C215,438 270,470 320,495 C375,522 420,400 470,355 C520,312 575,345 625,320 C685,290 735,240 775,195 C815,158 845,140 868,120" />
                 </g>
-                {/* hạt sáng: dòng chảy chuyển động */}
-                <circle className="river-drop" r="3"><animateMotion dur="6.5s" repeatCount="indefinite"><mpath href="#riverPath" /></animateMotion></circle>
-                <circle className="river-drop" r="2.4"><animateMotion dur="6.5s" begin="-2.2s" repeatCount="indefinite"><mpath href="#riverPath" /></animateMotion></circle>
-                <circle className="river-drop" r="2.8"><animateMotion dur="6.5s" begin="-4.3s" repeatCount="indefinite"><mpath href="#riverPath" /></animateMotion></circle>
                 {/* 4 trạm nguyên nhân hình thành độc quyền nhà nước */}
                 <g className="station" data-step="1" transform="translate(165,470)">
                   <circle className="st-glow" r="80" />
